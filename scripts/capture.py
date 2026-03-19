@@ -12,11 +12,11 @@ from datetime import datetime
 
 gst_pipeline = (
     "nvarguscamerasrc ! "
-    "video/x-raw(memory:NVMM), width=640, height=480, framerate=30/1 ! "
+    "video/x-raw(memory:NVMM), width=1280, height=720, framerate=30/1 ! "
     "nvvidconv flip-method=2 ! "
     "nvvidconv ! video/x-raw, format=BGRx ! "
     "videoconvert ! video/x-raw, format=BGR ! appsink"
-)
+) #use native square formats
 
 # Open camera
 print("Opening camera...")
